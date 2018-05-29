@@ -17,13 +17,15 @@ namespace HiddenHangouts.Controllers
         [HttpGet]
         public IActionResult GetHangouts()
         {
+            //need to figure out how to get data from a data source
+            //and then how to turn that data into its corresponding models
             return Ok("get all hangouts");
         }
 
         [HttpPost]
-        public IActionResult CreateHangout(
-            [FromBody] Hangout hangout)
+        public IActionResult CreateHangout(dynamic hangout)
         {
+            var newHangout = new Hangout(hangout);
             return Ok();
         }
 
